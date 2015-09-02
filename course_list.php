@@ -14,7 +14,7 @@ if($_POST)
 	var_dump(mysql_affected_rows());
 	if(mysql_affected_rows()>0)
 	{
-		success("删除成功","./class_list.php");
+		success("删除成功","./course_list.php");
 	}else{
 		error("删除失败");
 	}
