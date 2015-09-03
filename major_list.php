@@ -54,6 +54,7 @@ if($_POST)
 			<th>编号</th>
 			<th>专业名称</th>
 			<th>院系名称</th>
+			<th>操作</th>
 		</tr>
 	<?php foreach ($data as $value) { ?>
 		<tr>
@@ -61,6 +62,7 @@ if($_POST)
 			<td><?php echo $value["major_id"] ?></td>
 			<td><?php echo $value["major_name"] ?></td>
 			<td><?php echo $value["department_name"]?></td>
+			<td><a href="major_add_edit.php?major_id=<?php echo $value['major_id'] ?>">编辑</a></td>
 		</tr>
 	<?php } ?>
 	</table>

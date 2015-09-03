@@ -70,6 +70,7 @@
 			<th>班级名称</th>
 			<th>专业名称</th>
 			<th>院系名称</th>
+			<th>操作</th>
 		</tr>
 	<?php foreach ($data as $value) { ?>
 		<tr>
@@ -87,6 +88,7 @@
 			}
 
 			 ?></td>
+			 <td><a href="class_add_edit.php?class_id=<?php echo $value['class_id'] ?>">编辑</a></td>
 		</tr>
 	<?php } ?>
 	</table>

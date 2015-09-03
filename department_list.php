@@ -48,12 +48,14 @@ if($_POST)
 		<th><input type="checkbox" id="check_all">全选 -- <input type="submit" value="删除"> -- <input type="checkbox" id="check_fan">反选</th>
 		<th>编号</th>
 		<th>院系名称</th>
+		<th>操作</th>
 	</tr>
 <?php foreach ($data as $value) { ?>
 	<tr>
 		<td><input type="checkbox" name="del[]" value="<?php echo $value["department_id"] ?>"></td>
 		<td><?php echo $value["department_id"] ?></td>
 		<td><?php echo $value["department_name"] ?></td>
+		<td><a href="department_add_edit.php?dear_id=<?php echo $value['department_id'] ?>">编辑</a></td>
 	</tr>
 <?php } ?>
 </table>

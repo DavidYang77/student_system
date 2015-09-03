@@ -40,6 +40,7 @@ if($_POST)
 			$data[]=$row;
 		}
 	}
+	var_dump($data);
 ?>
 <h1>学生页面<a href="./student_add.php">添加页面</a></h1>
 
@@ -58,6 +59,7 @@ if($_POST)
 		<th>院系名称</th>
 		<th>班级名称</th>
 		<th>分数</th>
+		<th>操作</th>
 	</tr>
 <?php foreach ($data as $value) { ?>
 	<tr>
@@ -73,6 +75,7 @@ if($_POST)
 		<td><?php echo $value["department_name"] ?></td>
 		<td><?php echo $value["class_name"] ?></td>
 		<td><?php echo $value["student_point"] ?></td>
+		<td><a href="student_add_edit.php?student_id=<?php echo $value['student_id'] ?>">编辑</a></td>
 	</tr>
 <?php } ?>
 </table>

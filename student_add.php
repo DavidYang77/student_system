@@ -27,15 +27,14 @@
       empty($card)?error("身份证为空"):"";
       empty($phone)?error("手机号码为空"):"";
       empty($year)?error("入学年份为空"):"";
-      $school=="0"?error("请选择高校"):"";  
        $major=="0"?error("请选择专业"):""; 
        $class_id=="0"?error("请选择专业"):""; 
       empty($point)?error("分数为空"):"";
-   
+
 
        // 编写sql语句
-      $sql = "INSERT INTO `stu_student`(`student_name`,`student_number`,`student_gender`,`student_birth`,`student_id_card`,`student_phone`,`student_year`,`student_from_school`,`student_major_id`,`student_department_id`,`student_class_id`,`student_point`
-         ) VALUES ('{$name}','{$number}','{$gender}','{$birth}','{$card}','{$phone}','{$year}','{$school}','{$major}','{$department_id}','{$class_id}','{$point}'
+      $sql = "INSERT INTO `stu_student`(`student_name`,`student_number`,`student_gender`,`student_birth`,`student_id_card`,`student_phone`,`student_year`,`student_major_id`,`student_department_id`,`student_class_id`,`student_point`
+         ) VALUES ('{$name}','{$number}','{$gender}','{$birth}','{$card}','{$phone}','{$year}','{$major}','{$department_id}','{$class_id}','{$point}'
          )";
       //执行SQL语句
       mysql_query($sql);
@@ -80,15 +79,6 @@
       $deart_data[]=$row;
    }
 
-   // 查询课程表
-   $sql="SELECT * FROM `stu_course`";
-   $res=mysql_query($sql);
-   
-   $course_data=array();
-   while($row=mysql_fetch_assoc($res))
-   {
-      $course_data[]=$row;
-   }
 ?>
 <h1>添加学生信息</h1>
 
@@ -148,17 +138,8 @@
          </td>
       </tr>
       <tr>
-         <th>课程名称</th>
-         <td><select name="course_id" id="">
-               <option value="0">请选择课程</option>
-      <?php foreach ($course_data as $value) {?>
-               <?php echo '<option value="'.$value["course_id"].'">'.$value["course_name"].'</option>'; ?>
-      <?php } ?>
-            </select></td>
-      </tr> 
-      <tr>
          <th>班级名称</th>
-         <td><select name="class_id" id="">
+         <td><select name="class_id" id   ="">
                <option value="0">请选择班级</option>
       <?php foreach ($class_data as $value) {?>
                <?php echo '<option value="'.$value["class_id"].'">'.$value["class_name"].'</option>'; ?>
